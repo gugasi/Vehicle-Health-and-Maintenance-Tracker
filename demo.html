@@ -5,16 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Health and Maintenance Tracker</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 600px; margin: auto; padding: 20px; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: auto; padding: 20px; background: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
         .section { margin-bottom: 20px; }
-        .section h2 { border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        .section h2 { border-bottom: 2px solid #ff1e00; padding-bottom: 10px; color: #ff1e00; }
         .section ul { list-style-type: none; padding: 0; }
-        .section ul li { padding: 5px 0; }
+        .section ul li { padding: 10px 0; border-bottom: 1px solid #ddd; }
+        .section ul li:last-child { border-bottom: none; }
+        .button { display: inline-block; padding: 10px 20px; margin: 10px 0; color: #fff; background-color: #ff1e00; border: none; border-radius: 5px; cursor: pointer; text-align: center; }
+        .button:hover { background-color: #ff1e00; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group select { width: 100%; padding: 8px; box-sizing: border-box; }
     </style>
 </head>
 <body>
     <div class="container">
+        <h1>Vehicle Health and Maintenance Tracker</h1>
+        <p>Monitor the health and maintenance of rented or owned vehicles. Get real-time updates on vehicle condition, upcoming maintenance schedules, and alerts for potential issues.</p>
+        <h3>Features:</h3>
+        <ul>
+            <li>Real-time monitoring via IoT devices</li>
+            <li>Automated maintenance reminders</li>
+            <li>Diagnostic alerts and service center suggestions</li>
+            <li>Service history log</li>
+            <li>Cost estimates for maintenance and repairs</li>
+        </ul>
+        <h3>Benefits:</h3>
+        <ul>
+            <li>Proactive maintenance to avoid breakdowns</li>
+            <li>Convenient vehicle management</li>
+            <li>Enhanced safety for users and passengers</li>
+        </ul>
         <div class="section">
             <h2>Vehicle Information</h2>
             <ul>
@@ -40,6 +62,7 @@
                 <li><strong>Tire Rotation:</strong> Due on 2024-11-15</li>
                 <li><strong>Brake Inspection:</strong> Due on 2024-12-01</li>
             </ul>
+            <button class="button">Add Maintenance</button>
         </div>
         <div class="section">
             <h2>Diagnostic Alerts</h2>
@@ -47,6 +70,7 @@
                 <li><strong>Low Tire Pressure:</strong> Resolved on 2024-09-18</li>
                 <li><strong>Battery Low:</strong> Pending since 2024-09-20</li>
             </ul>
+            <button class="button">Resolve Alert</button>
         </div>
         <div class="section">
             <h2>Service History</h2>
@@ -54,6 +78,25 @@
                 <li><strong>Oil Change:</strong> Completed on 2024-04-01 ($50)</li>
                 <li><strong>Tire Rotation:</strong> Completed on 2024-05-15 ($30)</li>
             </ul>
+            <button class="button">Add Service</button>
+        </div>
+        <div class="section">
+            <h2>Add New Vehicle</h2>
+            <form>
+                <div class="form-group">
+                    <label for="make">Make:</label>
+                    <input type="text" id="make" name="make">
+                </div>
+                <div class="form-group">
+                    <label for="model">Model:</label>
+                    <input type="text" id="model" name="model">
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" name="year">
+                </div>
+                <button type="submit" class="button">Add Vehicle</button>
+            </form>
         </div>
     </div>
 </body>
